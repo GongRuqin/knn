@@ -135,7 +135,7 @@ public class KnnMapper extends Mapper<LongWritable, Text, IntWritable, TypeDista
 	private float[] getAttributes(String[] line) {
 		float[] inData = new float[line.length];
 		for(int i=1;i<line.length;i++){// first column is label
-			inData[i] = Float.parseFloat(line[i]);
+			inData[i-1] = Float.parseFloat(line[i]);
 		}
 		return inData;
 	}
